@@ -1,0 +1,48 @@
+- what are your extra responsibilities as tech lead? Who is going to be responsibile for these ones while there is no other tech lead around?
+- is there any project ongoing (relevant to the team), you are aware of and not us?
+- what is the other team using Zorg (network), which is not in the dependency graph? Should we get in touch with them while redesigning the Zorg per pod?
+- how to deal with incident (a training session would be nice)? how to know when we should attend a retro of incident?
+- we need to have a map of : kind of problems -> which team / #channel to go to
+- what are Zendesk resources you find useful (bookmarks you have)
+- is there any channel we need to monitor to get info (like new standards to apply, etc)?
+- Zorg-api
+  - get the latest improvement points listed by you around Zorg-api
+    - e.g. delete on Routings response is inconsistent with upstream
+    - add check credentials for SQS + S3 (and not onlyDB) to crash when it’s unhealthy state https://zendesk.atlassian.net/browse/EDGE-9673
+    - enrich this document https://docs.google.com/document/d/1MMZb7PTNuDmHXRhd32VI9EQ6BoMLu97BRcqMxeIirzo/edit#heading=h.ezql8swrk5cp
+  - I don’t remember if everyhing from our single pod POC has been decommissioned? from k8s + zorg-api + zorg-consul
+    - The cleanup list we created:
+    - Remove k8 config for api/db-migrations in zorg/Samson
+    - Remove webhooks from Zorg Samson (in Migration container) and stages created for the POC
+    - Delete all kubenretes resources from zorg-api-poc namespace (including namespace itself)
+    - Delete zorg-api-poc database
+    - Delete zorg-api-poc sqs queue
+    - 2 PR on Zorg
+    - 2 PR on Zorg-api
+  - armory Spinnaker
+    - why do we need this PR https://github.com/zendesk/zendesk-identity-governance/pull/7587/files
+    - should we keep the repo https://github.com/zendesk/edge-tf-workspaces-spinnaker-test?
+    - any open tickets linked to you should have a new referral
+    - can we get everything (resources) you have done (POC, documentation)?
+  - how to migrate zorg-api to spinnaker? or at least get some hints or what might be difficult to migrate?
+- who knows how to migrate a project from Samson to Spinnaker? and the steps? team/people who may help on that? Is there any manual steps to maintain CICD updates?
+- who knows how to setup a spinnaker pipeline?
+- fdn-interface zorg client. Do we need to maintain it?
+- need to have all the ideas written down to decommission zcm project
+- Confluence:
+  - is there any documentation you find useful? or team should be aware of?
+  - is there any documentation that would need to be updated or decommissioned?
+- Jira:
+  - any open ticket with your name should have a new referral. And the team should be aware of it
+- github:
+  - are all projects under our responsibility listed in cerebro?
+  - check everything in github related to your email address + do we need to have the same access? DO you have anything to clean up (any repo to remove)?
+  - list every ongoing work you have
+- Kubernetes:
+  - what about the pod-admin configuration. How to set it up for everybody in the team?
+  - do you use any specific useful tool?
+- Check everything in your Google Drive and share documents which may be useful
+- Datadog:
+  - have you created custom dashboards, metrics, etc that we need to know about?
+- do you have useful charts in LucidChart we are not aware about?
+- important/useful commands you are using should be shared with the team
