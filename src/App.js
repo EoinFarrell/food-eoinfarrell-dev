@@ -16,24 +16,37 @@ function App() {
         console.log(data);
 
         const car = [
-          {key:"pizza", name:"Pizza", tags:['Italian'], ingredients:[
+          {key:"pizza", name:"Pizza", tags:['Italian', 'Prep Day'], recipe:"https://www.youtube.com/watch?v=7cqYiUmutGI", ingredients:[
             {name:"Flour", amount:"500g"},
             {name:"Salt", amount:"8g"},
             {name:"Yeast", amount:"1g"},
             {name:"Water", amount:"350ml"}
           ], image:"https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg"},
-          {key: "burrito", name:"Burrito", tags:['Mexican', 'Pain'], ingredients:[
+          {key: "burrito", name:"Burrito", tags:['Mexican', 'Pain'], recipe:"", ingredients:[
             {name:"Wraps", amount:"500g"},
             {name:"Onions", amount:"8g"},
             {name:"Cherry Tomatoes", amount:"1g"},
             {name:"Mince", amount:"350ml"}
           ], image:"https://upload.wikimedia.org/wikipedia/commons/6/60/Burrito.JPG"},
-          {key:"chili-con-carne", name:"Chili Con Carne", tags:['Mexican', 'Easy'], ingredients:[
+          {key:"chili-con-carne", name:"Chili Con Carne", tags:['Mexican', 'Easy'], recipe:"", ingredients:[
             {name:"Mince", amount:"500g"},
             {name:"asdf", amount:"8g"},
             {name:"Yeasdfast", amount:"1g"},
             {name:"asf", amount:"350ml"}
-          ], image:"https://upload.wikimedia.org/wikipedia/commons/5/50/Bowl_of_chili.jpg"}
+          ], image:"https://upload.wikimedia.org/wikipedia/commons/5/50/Bowl_of_chili.jpg"},
+          {key:"chickpea-burgers", name:"Chickpea Burgers", tags:['Vegi', 'Prep Day'], recipe:"https://www.rte.ie/lifestyle/recipes/2013/0508/745022-moroccan-chickpea-burgers/", ingredients:[
+            {name:"Chickpeas", amount:"1 tin"},
+            {name:"Breadcrumbs", amount:"60g"},
+            {name:"Tahini paste", amount:"2 tblsp"},
+            {name:"Egg", amount:"1"},
+            {name:"Coriander", amount:"1 tsp"},
+            {name:"Cumin", amount:"1 tsp"},
+            {name:"Spring Onions", amount:"6"},
+            {name:"Rapeseed Oil", amount:"2 tblsp"},
+            {name:"Pitta breads", amount:""},
+            {name:"Salad leaves", amount:""},
+            {name:"Grated Carrot", amount:"1"}
+          ], image:"https://img.rasset.ie/0005dd0b-800.jpg"}
         ];
 
         car.map((car) => {
@@ -72,7 +85,7 @@ function App() {
             <div className="p-6">
               <h5 className="text-gray-900 text-xl font-medium mb-2">{post.name}</h5>
               <p>Portions: 3</p>
-              <p>Recipe: <a href='https://www.youtube.com/watch?v=7cqYiUmutGI' className="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4">link</a></p>
+              <p>Recipe: <a href={`${post.recipe}`} className="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4">link</a></p>
 
               {/* {post.tags.map((tag) => (
                 <span
