@@ -23,10 +23,18 @@ function App() {
             {name:"Water", amount:"350ml"}
           ], image:"https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg"},
           {key: "burrito", name:"Burrito", tags:['Mexican', 'Pain'], recipe:"", ingredients:[
-            {name:"Wraps", amount:"500g"},
-            {name:"Onions", amount:"8g"},
-            {name:"Cherry Tomatoes", amount:"1g"},
-            {name:"Mince", amount:"350ml"}
+            {name:"Wraps", amount:"4"},
+            {name:"Onions", amount:"1"},
+            {name:"Cherry Tomatoes", amount:"10"},
+            {name:"Mince", amount:"400g"},
+            {name:"Kidney Beans", amount:"1 tin"},
+            {name:"Avacado", amount:"1"},
+            {name:"Tumeric", amount:"Feeling"},
+            {name:"Smoked Paprika", amount:"Feeling"},
+            {name:"Parsley", amount:"Feeling"},
+            {name:"Cayanne Pepper", amount:"Feeling"},
+            {name:"Corriander", amount:"Feeling"},
+            {name:"Lime Juice", amount:"Feeling"}
           ], image:"https://upload.wikimedia.org/wikipedia/commons/6/60/Burrito.JPG"},
           {key:"chili-con-carne", name:"Chili Con Carne", tags:['Mexican', 'Easy'], recipe:"", ingredients:[
             {name:"Mince", amount:"500g"},
