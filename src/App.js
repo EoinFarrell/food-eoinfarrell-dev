@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import 'tw-elements';
 
 function App() {
-  const [posts, setPosts] = useState([]);
+  const [recipes, setPosts] = useState([]);
 
   // GET with fetch API
   useEffect(() => {
@@ -15,27 +15,27 @@ function App() {
         const data = await response.json();
         console.log(data);
 
-        const car = [
-          {key:"pizza", name:"Pizza", tags:['Italian', 'Prep Day'], recipe:"https://www.youtube.com/watch?v=7cqYiUmutGI", ingredients:[
+        const recipes = [
+          {key:"pizza", name:"Pizza", tags:['Italian', 'Prep Day'], portions:3 , source:"https://www.youtube.com/watch?v=7cqYiUmutGI", ingredients:[
             {name:"Flour", amount:"500g"},
             {name:"Salt", amount:"8g"},
             {name:"Yeast", amount:"1g"},
             {name:"Water", amount:"350ml"}
           ], image:"https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg"},
-          {key: "burrito", name:"Burrito", tags:['Mexican', 'Pain'], recipe:"", ingredients:[
+          {key: "burrito", name:"Burrito", tags:['Mexican', 'Pain'], portions:4, source:"", ingredients:[
             {name:"Wraps", amount:"4"},
             {name:"Chili Con Carne", amount:"400g"},
             {name:"Guacamole", amount:"1 tin"},
             {name:"Salsa", amount:"Feeling"}
           ], image:"https://upload.wikimedia.org/wikipedia/commons/6/60/Burrito.JPG"},
-          {key:"guacamole", name:"Guacamole", tags:['Mexican', 'Easy', 'Side-dish'], recipe:"", ingredients:[
+          {key:"guacamole", name:"Guacamole", tags:['Mexican', 'Easy', 'Side-dish'], portions:1, source:"", ingredients:[
             {name:"Avocado", amount:"1"},
             {name:"Cherry Tomatoes", amount:"10"},
             {name:"Onions", amount:"1"},
             {name:"Salt", amount:"Feeling"},
             {name:"Pepper", amount:"Feeling"},
           ], image:"https://upload.wikimedia.org/wikipedia/commons/5/50/Bowl_of_chili.jpg"},
-          {key:"salsa", name:"Salsa", tags:['Mexican', 'Easy', 'Side-dish'], recipe:"", ingredients:[
+          {key:"salsa", name:"Salsa", tags:['Mexican', 'Easy', 'Side-dish'], portions:1, source:"", ingredients:[
             {name:"Cherry Tomatoes", amount:"10"},
             {name:"Onions", amount:"1"},
             {name:"Coriander", amount:"Feeling"},
@@ -43,7 +43,7 @@ function App() {
             {name:"Pepper", amount:"Feeling"},
             {name:"Lime Juice", amount:"Feeling"}
           ], image:"https://upload.wikimedia.org/wikipedia/commons/5/50/Bowl_of_chili.jpg"},
-          {key:"chili-con-carne", name:"Chili Con Carne", tags:['Mexican', 'Easy'], recipe:"", ingredients:[
+          {key:"chili-con-carne", name:"Chili Con Carne", tags:['Mexican', 'Easy'], portions:4, source:"", ingredients:[
             {name:"Mince", amount:"400g"},
             {name:"Kidney Beans", amount:"1 tin"},
             {name:"Tomatoes", amount:"1 tin"},
@@ -55,7 +55,7 @@ function App() {
             {name:"Coriander", amount:"Feeling"},
             {name:"Lime Juice", amount:"Feeling"}
           ], image:"https://upload.wikimedia.org/wikipedia/commons/5/50/Bowl_of_chili.jpg"},
-          {key:"chickpea-burgers", name:"Chickpea Burgers", tags:['Vegi', 'Prep Day'], recipe:"https://www.rte.ie/lifestyle/recipes/2013/0508/745022-moroccan-chickpea-burgers/", ingredients:[
+          {key:"chickpea-burgers", name:"Chickpea Burgers", tags:['Vegi', 'Prep Day'], portions:4, source:"https://www.rte.ie/lifestyle/recipes/2013/0508/745022-moroccan-chickpea-burgers/", ingredients:[
             {name:"Chickpeas", amount:"1 tin"},
             {name:"Breadcrumbs", amount:"60g"},
             {name:"Tahini paste", amount:"2 tblsp"},
@@ -70,12 +70,12 @@ function App() {
           ], image:"https://img.rasset.ie/0005dd0b-800.jpg"}
         ];
 
-        car.map((car) => {
-          car.classes = ""
-          car.tags.forEach((tag) => car.classes += tag + " ")
+        recipes.map((recipe) => {
+          recipe.classes = ""
+          recipe.tags.forEach((tag) => recipe.classes += tag + " ")
         })
 
-        setPosts(car);
+        setPosts(recipes);
      };
      fetchPost();
   }, []);
@@ -98,15 +98,15 @@ function App() {
 
       <div className="flex-1 overflow-auto">
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-       {posts.map((post) => (
-          <div className={`rounded-lg shadow-lg bg-white ${post.classes}`}>
+       {recipes.map((recipe) => (
+          <div className={`rounded-lg shadow-lg bg-white ${recipe.classes}`}>
             <a href="#!">
-              <img className="rounded-t-lg border rounded" src={`${post.image}`} alt=""></img>
+              <img className="rounded-t-lg border rounded" src={`${recipe.image}`} alt=""></img>
             </a>
             <div className="p-6">
-              <h5 className="text-gray-900 text-xl font-medium mb-2">{post.name}</h5>
-              <p>Portions: 3</p>
-              <p>Recipe: <a href={`${post.recipe}`} className="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4">link</a></p>
+              <h5 className="text-gray-900 text-xl font-medium mb-2">{recipe.name}</h5>
+              <p>Portions: {`${recipe.portions}`}</p>
+              <p>Recipe: <a href={`${recipe.source}`} className="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4">link</a></p>
 
               {/* {post.tags.map((tag) => (
                 <span
@@ -115,9 +115,9 @@ function App() {
                 </span>
                 
               ))} */}
-              <div className="accordion mt-4" id={`accordion${post.key}`}>
+              <div className="accordion mt-4" id={`accordion${recipe.key}`}>
                 <div className="accordion-item bg-white border border-gray-200">
-                  <h2 className="accordion-header mb-0" id={`heading${post.key}`}>
+                  <h2 className="accordion-header mb-0" id={`heading${recipe.key}`}>
                     <button className="
                       accordion-button
                       relative
@@ -132,13 +132,13 @@ function App() {
                       rounded-none
                       transition
                       focus:outline-none
-                    " type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${post.key}`} aria-expanded="true"
-                      aria-controls={`collapse${post.key}`}>
+                    " type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${recipe.key}`} aria-expanded="true"
+                      aria-controls={`collapse${recipe.key}`}>
                       Ingredients
                     </button>
                   </h2>
-                  <div id={`collapse${post.key}`} className="accordion-collapse collapse" aria-labelledby={`${post.key}`}
-                    data-bs-parent={`#accordion${post.key}`}>
+                  <div id={`collapse${recipe.key}`} className="accordion-collapse collapse" aria-labelledby={`${recipe.key}`}
+                    data-bs-parent={`#accordion${recipe.key}`}>
                     <div className="accordion-body py-4 px-5">
 
                       <div className="flex flex-col">
@@ -147,7 +147,7 @@ function App() {
                             <div className="overflow-hidden">
                               <table className="min-w-full text-center">
                                 <tbody>
-                                  {post.ingredients.map((ingredient) => (
+                                  {recipe.ingredients.map((ingredient) => (
                                     <tr className="bg-white border-b">
                                       <td className="px-6 py-2 whitespace-nowrap text-sm font-medium text-gray-900">
                                         {ingredient.name}
