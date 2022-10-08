@@ -24,23 +24,36 @@ function App() {
           ], image:"https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg"},
           {key: "burrito", name:"Burrito", tags:['Mexican', 'Pain'], recipe:"", ingredients:[
             {name:"Wraps", amount:"4"},
-            {name:"Onions", amount:"1"},
+            {name:"Chili Con Carne", amount:"400g"},
+            {name:"Guacamole", amount:"1 tin"},
+            {name:"Salsa", amount:"Feeling"}
+          ], image:"https://upload.wikimedia.org/wikipedia/commons/6/60/Burrito.JPG"},
+          {key:"guacamole", name:"Guacamole", tags:['Mexican', 'Easy', 'Side-dish'], recipe:"", ingredients:[
+            {name:"Avocado", amount:"1"},
             {name:"Cherry Tomatoes", amount:"10"},
+            {name:"Onions", amount:"1"},
+            {name:"Salt", amount:"Feeling"},
+            {name:"Pepper", amount:"Feeling"},
+          ], image:"https://upload.wikimedia.org/wikipedia/commons/5/50/Bowl_of_chili.jpg"},
+          {key:"salsa", name:"Salsa", tags:['Mexican', 'Easy', 'Side-dish'], recipe:"", ingredients:[
+            {name:"Cherry Tomatoes", amount:"10"},
+            {name:"Onions", amount:"1"},
+            {name:"Coriander", amount:"Feeling"},
+            {name:"Salt", amount:"Feeling"},
+            {name:"Pepper", amount:"Feeling"},
+            {name:"Lime Juice", amount:"Feeling"}
+          ], image:"https://upload.wikimedia.org/wikipedia/commons/5/50/Bowl_of_chili.jpg"},
+          {key:"chili-con-carne", name:"Chili Con Carne", tags:['Mexican', 'Easy'], recipe:"", ingredients:[
             {name:"Mince", amount:"400g"},
             {name:"Kidney Beans", amount:"1 tin"},
-            {name:"Avacado", amount:"1"},
+            {name:"Tomatoes", amount:"1 tin"},
+            {name:"Onions", amount:"1"},
             {name:"Tumeric", amount:"Feeling"},
             {name:"Smoked Paprika", amount:"Feeling"},
             {name:"Parsley", amount:"Feeling"},
-            {name:"Cayanne Pepper", amount:"Feeling"},
-            {name:"Corriander", amount:"Feeling"},
+            {name:"Cayenne Pepper", amount:"Feeling"},
+            {name:"Coriander", amount:"Feeling"},
             {name:"Lime Juice", amount:"Feeling"}
-          ], image:"https://upload.wikimedia.org/wikipedia/commons/6/60/Burrito.JPG"},
-          {key:"chili-con-carne", name:"Chili Con Carne", tags:['Mexican', 'Easy'], recipe:"", ingredients:[
-            {name:"Mince", amount:"500g"},
-            {name:"asdf", amount:"8g"},
-            {name:"Yeasdfast", amount:"1g"},
-            {name:"asf", amount:"350ml"}
           ], image:"https://upload.wikimedia.org/wikipedia/commons/5/50/Bowl_of_chili.jpg"},
           {key:"chickpea-burgers", name:"Chickpea Burgers", tags:['Vegi', 'Prep Day'], recipe:"https://www.rte.ie/lifestyle/recipes/2013/0508/745022-moroccan-chickpea-burgers/", ingredients:[
             {name:"Chickpeas", amount:"1 tin"},
