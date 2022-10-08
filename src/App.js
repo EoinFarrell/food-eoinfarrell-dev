@@ -67,7 +67,18 @@ function App() {
             {name:"Pitta breads", amount:""},
             {name:"Salad leaves", amount:""},
             {name:"Grated Carrot", amount:"1"}
-          ], image:"https://img.rasset.ie/0005dd0b-800.jpg"}
+          ], image:"https://img.rasset.ie/0005dd0b-800.jpg"},
+          {key:"taziti", name:"Taziti", tags:['Persian', 'Easy', 'Side-dish'], portions:1, source:"", ingredients:[
+            {name:"Yogurt", amount:"100gm"},
+            {name:"Cucumber", amount:"1/2"},
+            {name:"Garlic", amount:"1 Glove"},
+            {name:"Salt", amount:"Feeling"},
+            {name:"Lemon Juice", amount:"Feeling"}
+          ], image:"https://upload.wikimedia.org/wikipedia/commons/5/50/Bowl_of_chili.jpg"},
+          {key:"spicy-yogurt", name:"Spicy Yogurt", tags:['Persian', 'Easy', 'Side-dish'], portions:1, source:"", ingredients:[
+            {name:"Yogurt", amount:"100gm"},
+            {name:"Garam Masala", amount:"1 tsp"}
+          ], image:"https://upload.wikimedia.org/wikipedia/commons/5/50/Bowl_of_chili.jpg"},
         ];
 
         recipes.map((recipe) => {
